@@ -72,195 +72,7 @@ struct nlcamerapanel {
 		},					\
 	}
 
-static const struct nlcamerapanel_instr lhr050h41_init[] = {
-        NLCAMERAPANEL_SWITCH_PAGE_INSTR(3),
-        NLCAMERAPANEL_COMMAND_INSTR(0x01, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x02, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x03, 0x73),
-        NLCAMERAPANEL_COMMAND_INSTR(0x04, 0x03),
-        NLCAMERAPANEL_COMMAND_INSTR(0x05, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x06, 0x06),
-        NLCAMERAPANEL_COMMAND_INSTR(0x07, 0x06),
-        NLCAMERAPANEL_COMMAND_INSTR(0x08, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x09, 0x18),
-        NLCAMERAPANEL_COMMAND_INSTR(0x0a, 0x04),
-        NLCAMERAPANEL_COMMAND_INSTR(0x0b, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x0c, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x0d, 0x03),
-        NLCAMERAPANEL_COMMAND_INSTR(0x0e, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x0f, 0x25),
-        NLCAMERAPANEL_COMMAND_INSTR(0x10, 0x25),
-        NLCAMERAPANEL_COMMAND_INSTR(0x11, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x12, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x13, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x14, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x15, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x16, 0x0C),
-        NLCAMERAPANEL_COMMAND_INSTR(0x17, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x18, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x19, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x1a, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x1b, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x1c, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x1d, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x1e, 0xC0),
-        NLCAMERAPANEL_COMMAND_INSTR(0x1f, 0x80),
-        NLCAMERAPANEL_COMMAND_INSTR(0x20, 0x04),
-        NLCAMERAPANEL_COMMAND_INSTR(0x21, 0x01),
-        NLCAMERAPANEL_COMMAND_INSTR(0x22, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x23, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x24, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x25, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x26, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x27, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x28, 0x33),
-        NLCAMERAPANEL_COMMAND_INSTR(0x29, 0x03),
-        NLCAMERAPANEL_COMMAND_INSTR(0x2a, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x2b, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x2c, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x2d, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x2e, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x2f, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x30, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x31, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x32, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x33, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x34, 0x04),
-        NLCAMERAPANEL_COMMAND_INSTR(0x35, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x36, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x37, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x38, 0x3C),
-        NLCAMERAPANEL_COMMAND_INSTR(0x39, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x3a, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x3b, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x3c, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x3d, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x3e, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x3f, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x40, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x41, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x42, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x43, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x44, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x50, 0x01),
-        NLCAMERAPANEL_COMMAND_INSTR(0x51, 0x23),
-        NLCAMERAPANEL_COMMAND_INSTR(0x52, 0x45),
-        NLCAMERAPANEL_COMMAND_INSTR(0x53, 0x67),
-        NLCAMERAPANEL_COMMAND_INSTR(0x54, 0x89),
-        NLCAMERAPANEL_COMMAND_INSTR(0x55, 0xab),
-        NLCAMERAPANEL_COMMAND_INSTR(0x56, 0x01),
-        NLCAMERAPANEL_COMMAND_INSTR(0x57, 0x23),
-        NLCAMERAPANEL_COMMAND_INSTR(0x58, 0x45),
-        NLCAMERAPANEL_COMMAND_INSTR(0x59, 0x67),
-        NLCAMERAPANEL_COMMAND_INSTR(0x5a, 0x89),
-        NLCAMERAPANEL_COMMAND_INSTR(0x5b, 0xab),
-        NLCAMERAPANEL_COMMAND_INSTR(0x5c, 0xcd),
-        NLCAMERAPANEL_COMMAND_INSTR(0x5d, 0xef),
-        NLCAMERAPANEL_COMMAND_INSTR(0x5e, 0x11),
-        NLCAMERAPANEL_COMMAND_INSTR(0x5f, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x60, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x61, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x62, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x63, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x64, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x65, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x66, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x67, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x68, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x69, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x6a, 0x0C),
-        NLCAMERAPANEL_COMMAND_INSTR(0x6b, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x6c, 0x0F),
-        NLCAMERAPANEL_COMMAND_INSTR(0x6d, 0x0E),
-        NLCAMERAPANEL_COMMAND_INSTR(0x6e, 0x0D),
-        NLCAMERAPANEL_COMMAND_INSTR(0x6f, 0x06),
-        NLCAMERAPANEL_COMMAND_INSTR(0x70, 0x07),
-        NLCAMERAPANEL_COMMAND_INSTR(0x71, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x72, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x73, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x74, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x75, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x76, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x77, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x78, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x79, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x7a, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x7b, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x7c, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x7d, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x7e, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x7f, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x80, 0x0C),
-        NLCAMERAPANEL_COMMAND_INSTR(0x81, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x82, 0x0F),
-        NLCAMERAPANEL_COMMAND_INSTR(0x83, 0x0E),
-        NLCAMERAPANEL_COMMAND_INSTR(0x84, 0x0D),
-        NLCAMERAPANEL_COMMAND_INSTR(0x85, 0x06),
-        NLCAMERAPANEL_COMMAND_INSTR(0x86, 0x07),
-        NLCAMERAPANEL_COMMAND_INSTR(0x87, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x88, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x89, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x8A, 0x02),
-        NLCAMERAPANEL_SWITCH_PAGE_INSTR(4),
-        NLCAMERAPANEL_COMMAND_INSTR(0x6C, 0x15),
-        NLCAMERAPANEL_COMMAND_INSTR(0x6E, 0x22),
-        NLCAMERAPANEL_COMMAND_INSTR(0x6F, 0x33),
-        NLCAMERAPANEL_COMMAND_INSTR(0x3A, 0xA4),
-        NLCAMERAPANEL_COMMAND_INSTR(0x8D, 0x0D),
-        NLCAMERAPANEL_COMMAND_INSTR(0x87, 0xBA),
-        NLCAMERAPANEL_COMMAND_INSTR(0x26, 0x76),
-        NLCAMERAPANEL_COMMAND_INSTR(0xB2, 0xD1),
-        NLCAMERAPANEL_SWITCH_PAGE_INSTR(1),
-        NLCAMERAPANEL_COMMAND_INSTR(0x22, 0x0A),
-        NLCAMERAPANEL_COMMAND_INSTR(0x53, 0xDC),
-        NLCAMERAPANEL_COMMAND_INSTR(0x55, 0xA7),
-        NLCAMERAPANEL_COMMAND_INSTR(0x50, 0x78),
-        NLCAMERAPANEL_COMMAND_INSTR(0x51, 0x78),
-        NLCAMERAPANEL_COMMAND_INSTR(0x31, 0x02),
-        NLCAMERAPANEL_COMMAND_INSTR(0x60, 0x14),
-        NLCAMERAPANEL_COMMAND_INSTR(0xA0, 0x2A),
-        NLCAMERAPANEL_COMMAND_INSTR(0xA1, 0x39),
-        NLCAMERAPANEL_COMMAND_INSTR(0xA2, 0x46),
-        NLCAMERAPANEL_COMMAND_INSTR(0xA3, 0x0e),
-        NLCAMERAPANEL_COMMAND_INSTR(0xA4, 0x12),
-        NLCAMERAPANEL_COMMAND_INSTR(0xA5, 0x25),
-        NLCAMERAPANEL_COMMAND_INSTR(0xA6, 0x19),
-        NLCAMERAPANEL_COMMAND_INSTR(0xA7, 0x1d),
-        NLCAMERAPANEL_COMMAND_INSTR(0xA8, 0xa6),
-        NLCAMERAPANEL_COMMAND_INSTR(0xA9, 0x1C),
-        NLCAMERAPANEL_COMMAND_INSTR(0xAA, 0x29),
-        NLCAMERAPANEL_COMMAND_INSTR(0xAB, 0x85),
-        NLCAMERAPANEL_COMMAND_INSTR(0xAC, 0x1C),
-        NLCAMERAPANEL_COMMAND_INSTR(0xAD, 0x1B),
-        NLCAMERAPANEL_COMMAND_INSTR(0xAE, 0x51),
-        NLCAMERAPANEL_COMMAND_INSTR(0xAF, 0x22),
-        NLCAMERAPANEL_COMMAND_INSTR(0xB0, 0x2d),
-        NLCAMERAPANEL_COMMAND_INSTR(0xB1, 0x4f),
-        NLCAMERAPANEL_COMMAND_INSTR(0xB2, 0x59),
-        NLCAMERAPANEL_COMMAND_INSTR(0xB3, 0x3F),
-        NLCAMERAPANEL_COMMAND_INSTR(0xC0, 0x2A),
-        NLCAMERAPANEL_COMMAND_INSTR(0xC1, 0x3a),
-        NLCAMERAPANEL_COMMAND_INSTR(0xC2, 0x45),
-        NLCAMERAPANEL_COMMAND_INSTR(0xC3, 0x0e),
-        NLCAMERAPANEL_COMMAND_INSTR(0xC4, 0x11),
-        NLCAMERAPANEL_COMMAND_INSTR(0xC5, 0x24),
-        NLCAMERAPANEL_COMMAND_INSTR(0xC6, 0x1a),
-        NLCAMERAPANEL_COMMAND_INSTR(0xC7, 0x1c),
-        NLCAMERAPANEL_COMMAND_INSTR(0xC8, 0xaa),
-        NLCAMERAPANEL_COMMAND_INSTR(0xC9, 0x1C),
-        NLCAMERAPANEL_COMMAND_INSTR(0xCA, 0x29),
-        NLCAMERAPANEL_COMMAND_INSTR(0xCB, 0x96),
-        NLCAMERAPANEL_COMMAND_INSTR(0xCC, 0x1C),
-        NLCAMERAPANEL_COMMAND_INSTR(0xCD, 0x1B),
-        NLCAMERAPANEL_COMMAND_INSTR(0xCE, 0x51),
-        NLCAMERAPANEL_COMMAND_INSTR(0xCF, 0x22),
-        NLCAMERAPANEL_COMMAND_INSTR(0xD0, 0x2b),
-        NLCAMERAPANEL_COMMAND_INSTR(0xD1, 0x4b),
-        NLCAMERAPANEL_COMMAND_INSTR(0xD2, 0x59),
-        NLCAMERAPANEL_COMMAND_INSTR(0xD3, 0x3F),
-};
-
-static const struct nlcamerapanel_instr k101_im2byl02_init[] = {
+static const struct nlcamerapanel_instr nlcamerapanel_init[] = {
         NLCAMERAPANEL_SWITCH_PAGE_INSTR(3),
         NLCAMERAPANEL_COMMAND_INSTR(0x01, 0x00),
         NLCAMERAPANEL_COMMAND_INSTR(0x02, 0x00),
@@ -495,23 +307,28 @@ static int nlcamerapanel_send_cmd_data(struct nlcamerapanel *ctx, u8 cmd, u8 dat
 
 static int nlcamerapanel_prepare(struct drm_panel *panel)
 {
+    printk(KERN_ERR "nlcamerapanel_prepare");
     struct nlcamerapanel *ctx = panel_to_nlcamerapanel(panel);
     unsigned int i;
     int ret;
 
     /* Power the panel */
+    printk(KERN_ERR "nlcamerapanel regulator_enable");
     ret = regulator_enable(ctx->power);
     if (ret)
         return ret;
     msleep(5);
 
     /* And reset it */
+    printk(KERN_ERR "nlcamerapanel reset 1");
     gpiod_set_value(ctx->reset, 1);
     msleep(20);
 
+    printk(KERN_ERR "nlcamerapanel reset 0");
     gpiod_set_value(ctx->reset, 0);
     msleep(20);
 
+    printk(KERN_ERR "nlcamerapanel init sequence");
     for (i = 0; i < ctx->desc->init_length; i++) {
         const struct nlcamerapanel_instr *instr = &ctx->desc->init[i];
 
@@ -529,10 +346,12 @@ static int nlcamerapanel_prepare(struct drm_panel *panel)
     if (ret)
         return ret;
 
+    printk(KERN_ERR "nlcamerapanel set tear on");
     ret = mipi_dsi_dcs_set_tear_on(ctx->dsi, MIPI_DSI_DCS_TEAR_MODE_VBLANK);
     if (ret)
         return ret;
 
+    printk(KERN_ERR "nlcamerapanel exit sleep mode");
     ret = mipi_dsi_dcs_exit_sleep_mode(ctx->dsi);
     if (ret)
         return ret;
@@ -569,24 +388,7 @@ static int nlcamerapanel_unprepare(struct drm_panel *panel)
     return 0;
 }
 
-static const struct drm_display_mode lhr050h41_default_mode = {
-        .clock		= 62000,
-
-        .hdisplay	= 720,
-        .hsync_start	= 720 + 10,
-        .hsync_end	= 720 + 10 + 20,
-        .htotal		= 720 + 10 + 20 + 30,
-
-        .vdisplay	= 1280,
-        .vsync_start	= 1280 + 10,
-        .vsync_end	= 1280 + 10 + 10,
-        .vtotal		= 1280 + 10 + 10 + 20,
-
-        .width_mm	= 62,
-        .height_mm	= 110,
-};
-
-static const struct drm_display_mode k101_im2byl02_default_mode = {
+static const struct drm_display_mode nlcamerapanel_default_mode = {
         .clock		= 69700,
 
         .hdisplay	= 800,
@@ -642,7 +444,7 @@ static int nlcamerapanel_dsi_probe(struct mipi_dsi_device *dsi)
     struct nlcamerapanel *ctx;
     int ret;
 
-    printk(KERN_INFO "nlcamerapanel_dsi_probe called\n");
+    printk(KERN_ERR "nlcamerapanel_dsi_probe called\n");
 
     ctx = devm_kzalloc(&dsi->dev, sizeof(*ctx), GFP_KERNEL);
     if (!ctx)
@@ -651,6 +453,7 @@ static int nlcamerapanel_dsi_probe(struct mipi_dsi_device *dsi)
     ctx->dsi = dsi;
     ctx->desc = of_device_get_match_data(&dsi->dev);
 
+    printk(KERN_ERR "nlcamerapanel drm_panel_init\n");
     drm_panel_init(&ctx->panel, &dsi->dev, &nlcamerapanel_funcs,
                    DRM_MODE_CONNECTOR_DSI);
 
@@ -670,12 +473,14 @@ static int nlcamerapanel_dsi_probe(struct mipi_dsi_device *dsi)
     if (ret)
         return ret;
 
+    printk(KERN_ERR "nlcamerapanel drm_panel_add\n");
     drm_panel_add(&ctx->panel);
 
-    dsi->mode_flags = MIPI_DSI_MODE_VIDEO_SYNC_PULSE;
+    dsi->mode_flags = MIPI_DSI_MODE_VIDEO_SYNC_PULSE | MIPI_DSI_MODE_VIDEO;
     dsi->format = MIPI_DSI_FMT_RGB888;
     dsi->lanes = 4;
 
+    printk(KERN_ERR "nlcamerapanel mipi_dsi_attach\n");
     return mipi_dsi_attach(dsi);
 }
 
@@ -689,21 +494,14 @@ static int nlcamerapanel_dsi_remove(struct mipi_dsi_device *dsi)
     return 0;
 }
 
-static const struct nlcamerapanel_desc lhr050h41_desc = {
-        .init = lhr050h41_init,
-        .init_length = ARRAY_SIZE(lhr050h41_init),
-        .mode = &lhr050h41_default_mode,
-};
-
-static const struct nlcamerapanel_desc k101_im2byl02_desc = {
-        .init = k101_im2byl02_init,
-        .init_length = ARRAY_SIZE(k101_im2byl02_init),
-        .mode = &k101_im2byl02_default_mode,
+static const struct nlcamerapanel_desc nlcamerapanel_desc = {
+        .init = nlcamerapanel_init,
+        .init_length = ARRAY_SIZE(nlcamerapanel_init),
+        .mode = &nlcamerapanel_default_mode,
 };
 
 static const struct of_device_id nlcamerapanel_of_match[] = {
-        { .compatible = "bananapi,lhr050h41", .data = &lhr050h41_desc },
-        { .compatible = "feixin,k101-im2byl02", .data = &k101_im2byl02_desc },
+        { .compatible = "nlacoustics,nlcamerapanel", .data = &nlcamerapanel_desc },
         { }
 };
 MODULE_DEVICE_TABLE(of, nlcamerapanel_of_match);
@@ -712,7 +510,7 @@ static struct mipi_dsi_driver nlcamerapanel_dsi_driver = {
         .probe		= nlcamerapanel_dsi_probe,
         .remove		= nlcamerapanel_dsi_remove,
         .driver = {
-                .name		= "nlcamerapanel-dsi",
+                .name		= "nlcamerapanel",
                 .of_match_table	= nlcamerapanel_of_match,
         },
 };
