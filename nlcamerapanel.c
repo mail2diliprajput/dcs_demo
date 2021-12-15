@@ -322,11 +322,11 @@ static int nlcamerapanel_prepare(struct drm_panel *panel)
     /* And reset it */
     printk(KERN_ERR "nlcamerapanel reset 1");
     gpiod_set_value(ctx->reset, 1);
-    msleep(20);
+    msleep(150);
 
     printk(KERN_ERR "nlcamerapanel reset 0");
     gpiod_set_value(ctx->reset, 0);
-    msleep(20);
+    msleep(400);
 
     printk(KERN_ERR "nlcamerapanel init sequence");
     for (i = 0; i < ctx->desc->init_length; i++) {
