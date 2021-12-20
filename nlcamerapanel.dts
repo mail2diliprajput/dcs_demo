@@ -33,7 +33,7 @@
 				status        = "okay";
 				reg           = <0>;
 				label         = "nlcamerapanel";
-				reset-gpios   = <&gpio 16 1>;   // LCD RST
+				reset-gpios   = <&gpio 16 0>;   // LCD RST
 				port {
 					panel_dsi_port: endpoint {
 						remote-endpoint = <&dsi_out_port>;
