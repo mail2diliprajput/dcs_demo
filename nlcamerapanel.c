@@ -336,7 +336,7 @@ static int nlcamerapanel_prepare(struct drm_panel *panel)
 
     printk(KERN_ERR "nlcamerapanel sleep out");
     u8 sleep_out = 0x11;
-    ret = mipi_dsi_dcs_write_buffer(ctx->dsi, sleep_out, sizeof sleep_out);
+    ret = mipi_dsi_dcs_write_buffer(ctx->dsi, &sleep_out, sizeof sleep_out);
     if (ret)
         return ret;
     msleep(120);
