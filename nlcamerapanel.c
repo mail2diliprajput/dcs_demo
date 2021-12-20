@@ -269,6 +269,10 @@ static const struct nlcamerapanel_instr nlcamerapanel_init[] = {
         NLCAMERAPANEL_COMMAND_INSTR(0xD1, 0x4B), /* VN8 */
         NLCAMERAPANEL_COMMAND_INSTR(0xD2, 0x60), /* VN4 */
         NLCAMERAPANEL_COMMAND_INSTR(0xD3, 0x39), /* VN0 */
+        //ILI9881C PAGE0
+        NLCAMERAPANEL_SWITCH_PAGE_INSTR(0),
+        NLCAMERAPANEL_COMMAND_INSTR(0x35, 0x00),
+        NLCAMERAPANEL_COMMAND_INSTR(0x36, 0x03),
 };
 
 static inline struct nlcamerapanel *panel_to_nlcamerapanel(struct drm_panel *panel)
@@ -355,9 +359,15 @@ static int nlcamerapanel_prepare(struct drm_panel *panel)
             return ret;
     }
 
-    ret = nlcamerapanel_switch_page(ctx, 0);
+    printk(KERN_ERR "nlcamerapanel sleep out after initialize");
+    ret = mipi_dsi_dcs_write_buffer(ctx->dsi, &sleep_out, sizeof sleep_out);
     if (ret)
         return ret;
+    msleep(120);
+
+    u8 sleep_out1 = 0x29;
+    ret = mipi_dsi_dcs_write_buffer(ctx->dsi, &sleep_out1, sizeof sleep_out1);
+    msleep(20);
 
     printk(KERN_ERR "nlcamerapanel set tear on");
     ret = mipi_dsi_dcs_set_tear_on(ctx->dsi, MIPI_DSI_DCS_TEAR_MODE_VBLANK);
