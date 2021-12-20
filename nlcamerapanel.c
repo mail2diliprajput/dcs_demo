@@ -334,6 +334,13 @@ static int nlcamerapanel_prepare(struct drm_panel *panel)
     gpiod_set_value(ctx->reset, 0);
     msleep(400);
 
+    printk(KERN_ERR "nlcamerapanel sleep out");
+    u8 sleep_out = 0x11;
+    ret = mipi_dsi_dcs_write_buffer(ctx->dsi, sleep_out, sizeof sleep_out);
+    if (ret)
+        return ret;
+    msleep(120);
+
     printk(KERN_ERR "nlcamerapanel init sequence");
     for (i = 0; i < ctx->desc->init_length; i++) {
         const struct nlcamerapanel_instr *instr = &ctx->desc->init[i];
