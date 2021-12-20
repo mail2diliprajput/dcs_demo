@@ -402,15 +402,15 @@ static int nlcamerapanel_unprepare(struct drm_panel *panel)
 }
 
 static const struct drm_display_mode nlcamerapanel_default_mode = {
-        .clock          = 396000000,
+        .clock          = 39600,
 
         .hdisplay       = 720,
-        .hsync_start    = 2 + 12,  //HAS + HBP
+        .hsync_start    = 2 + 12 + 720,  //HAS + HBP
         .hsync_end      = 2 + 12 + 720,  //HAS + HBP + HACT
         .htotal         = 2 + 12 + 720 + 18, //HAS + HBP + HACT + HFP
 
         .vdisplay       = 1280,
-        .vsync_start    = 2 + 14, //VAS+VBP
+        .vsync_start    = 2 + 14 + 1280, //VAS+VBP
         .vsync_end      = 2 + 14 + 1280, //VAS+VBP+VACT
         .vtotal         = 2 + 14 + 1280 + 8, //VAS+VBP+VACT+VFP
 
