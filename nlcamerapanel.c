@@ -271,8 +271,6 @@ static const struct nlcamerapanel_instr nlcamerapanel_init[] = {
         NLCAMERAPANEL_COMMAND_INSTR(0xD3, 0x39), /* VN0 */
         //ILI9881C PAGE0
         NLCAMERAPANEL_SWITCH_PAGE_INSTR(0),
-        NLCAMERAPANEL_COMMAND_INSTR(0x35, 0x00),
-        NLCAMERAPANEL_COMMAND_INSTR(0x36, 0x03),
 };
 
 static inline struct nlcamerapanel *panel_to_nlcamerapanel(struct drm_panel *panel)
@@ -329,14 +327,20 @@ static int nlcamerapanel_prepare(struct drm_panel *panel)
         return ret;
     msleep(5);
 
-    /* And reset it */
-    printk(KERN_ERR "nlcamerapanel reset 1");
-    gpiod_set_value(ctx->reset, 1);
-    msleep(150);
+    gpiod_direction_output_raw(ctx->reset, GPIOD_OUT_LOW);
 
     printk(KERN_ERR "nlcamerapanel reset 0");
-    gpiod_set_value(ctx->reset, 0);
-    msleep(400);
+    gpiod_set_raw_value(ctx->reset, 1);
+    msleep(10);
+
+    /* And reset it */
+    printk(KERN_ERR "nlcamerapanel reset 1");
+    gpiod_set_raw_value(ctx->reset, 0);
+    msleep(10);
+
+    printk(KERN_ERR "nlcamerapanel reset 0");
+    gpiod_set_raw_value(ctx->reset, 1);
+    msleep(200);
 
     printk(KERN_ERR "nlcamerapanel sleep out");
     u8 sleep_out = 0x11;
@@ -360,24 +364,23 @@ static int nlcamerapanel_prepare(struct drm_panel *panel)
     }
 
     printk(KERN_ERR "nlcamerapanel sleep out after initialize");
-    ret = mipi_dsi_dcs_write_buffer(ctx->dsi, &sleep_out, sizeof sleep_out);
+    ret = mipi_dsi_dcs_exit_sleep_mode(ctx->dsi);
     if (ret)
         return ret;
     msleep(120);
 
-    u8 sleep_out1 = 0x29;
-    ret = mipi_dsi_dcs_write_buffer(ctx->dsi, &sleep_out1, sizeof sleep_out1);
-    msleep(20);
-
-    printk(KERN_ERR "nlcamerapanel set tear on");
     ret = mipi_dsi_dcs_set_tear_on(ctx->dsi, MIPI_DSI_DCS_TEAR_MODE_VBLANK);
     if (ret)
         return ret;
 
-    printk(KERN_ERR "nlcamerapanel exit sleep mode");
-    ret = mipi_dsi_dcs_exit_sleep_mode(ctx->dsi);
+    ret = nlcamerapanel_send_cmd_data(ctx, MIPI_DCS_SET_ADDRESS_MODE, 0x03);
     if (ret)
         return ret;
+
+    ret = mipi_dsi_dcs_set_display_on(ctx->dsi);
+    if (ret)
+        return ret;
+    msleep(20);
 
     return 0;
 }
@@ -412,17 +415,17 @@ static int nlcamerapanel_unprepare(struct drm_panel *panel)
 }
 
 static const struct drm_display_mode nlcamerapanel_default_mode = {
-        .clock          = 39600,
+        .clock          = 80000,
 
         .hdisplay       = 720,
-        .hsync_start    = 2 + 12 + 720,  //HAS + HBP
-        .hsync_end      = 2 + 12 + 720,  //HAS + HBP + HACT
-        .htotal         = 2 + 12 + 720 + 18, //HAS + HBP + HACT + HFP
+        .hsync_start    = 720 + 18,
+        .hsync_end      = 720 + 18 + 2,
+        .htotal         = 720 + 18 + 2 + 12,
 
         .vdisplay       = 1280,
-        .vsync_start    = 2 + 14 + 1280, //VAS+VBP
-        .vsync_end      = 2 + 14 + 1280, //VAS+VBP+VACT
-        .vtotal         = 2 + 14 + 1280 + 8, //VAS+VBP+VACT+VFP
+        .vsync_start    = 1280 + 8,
+        .vsync_end      = 1280 + 8 + 2,
+        .vtotal         = 1280 + 8 + 2 + 14,
 
         .width_mm       = 135,
         .height_mm      = 217,
