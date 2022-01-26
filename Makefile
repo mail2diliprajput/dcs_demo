@@ -1,5 +1,7 @@
 KDIR ?= /lib/modules/`uname -r`/build
 
+.PHONY: clean default defconfig overlay all
+
 clean:
 	$(MAKE) -C $(KDIR) M=$$PWD clean
 
@@ -8,5 +10,10 @@ default:
 
 defconfig:
 
-# Module specific targets
+overlay: nlcamerapanel.dtbo
+	sudo cp nlcamerapanel.dtbo /boot/overlays/
+
 all: default
+
+%.dtbo: %.dts
+	dtc -I dts -O dtb -o $@ $<
