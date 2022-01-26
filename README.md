@@ -15,7 +15,7 @@ Install kernel headers (for building):
 
 First clone the repository:
 
-    git clone git@bitbucket.org:noiseless-acoustics/nlcamerapanel.git
+    git clone https://bitbucket.org/noiseless-acoustics/nlcamerapanel.git
     cd nlcamerapanel
 
 To install the device tree overlay (required
