@@ -7,9 +7,9 @@ Update using:
     sudo apt upgrade
     sudo reboot
 
-Install kernel headers (for building):
+Install git and kernel headers (for building):
 
-    sudo apt install raspberrypi-kernel-headers
+    sudo apt install git raspberrypi-kernel-headers
 
 ## Building and testing
 
