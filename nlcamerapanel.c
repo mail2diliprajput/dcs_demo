@@ -342,6 +342,13 @@ static int nlcamerapanel_prepare(struct drm_panel *panel)
     gpiod_set_raw_value(ctx->reset, 1);
     msleep(200);
 
+    printk(KERN_ERR "nlcamerapanel software reset");
+    u8 reset = 0x01;
+    ret = mipi_dsi_dcs_write_buffer(ctx->dsi, &reset, sizeof reset);
+    if (ret)
+        return ret;
+    msleep(120);
+
     printk(KERN_ERR "nlcamerapanel sleep out");
     u8 sleep_out = 0x11;
     ret = mipi_dsi_dcs_write_buffer(ctx->dsi, &sleep_out, sizeof sleep_out);
@@ -415,18 +422,17 @@ static int nlcamerapanel_unprepare(struct drm_panel *panel)
 }
 
 static const struct drm_display_mode nlcamerapanel_default_mode = {
-        .clock          = 27000,
-        //.clock          = 40000,
+        .clock          = 65000, // works with 28831
 
         .hdisplay       = 720,
-        .hsync_start    = 720 + 18,
-        .hsync_end      = 720 + 18 + 2,
-        .htotal         = 720 + 18 + 2 + 12,
+        .hsync_start    = 720 + 72,
+        .hsync_end      = 720 + 72 + 2,
+        .htotal         = 720 + 72 + 2 + 12,
 
         .vdisplay       = 1280,
-        .vsync_start    = 1280 + 8,
-        .vsync_end      = 1280 + 8 + 2,
-        .vtotal         = 1280 + 8 + 2 + 14,
+        .vsync_start    = 1280 + 40 + 8,
+        .vsync_end      = 1280 + 40 + 8 + 2,
+        .vtotal         = 1280 + 40 + 8 + 2 + 14,
 
         .width_mm       = 135,
         .height_mm      = 217,
