@@ -1,4 +1,5 @@
 KDIR ?= /lib/modules/`uname -r`/build
+OVERLAY_DIR ?= /boot/overlays/
 
 .PHONY: clean default defconfig overlay all
 
@@ -11,7 +12,7 @@ default:
 defconfig:
 
 overlay: nlcamerapanel.dtbo
-	sudo cp nlcamerapanel.dtbo /boot/overlays/
+	sudo cp nlcamerapanel.dtbo OVERLAY_DIR
 
 all: default
 
