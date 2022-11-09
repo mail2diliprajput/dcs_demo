@@ -6,13 +6,18 @@ OVERLAY_DIR ?= /boot/overlays/
 clean:
 	$(MAKE) -C $(KDIR) M=$$PWD clean
 
-default:
+default: nlcamerapanel.dtbo
 	$(MAKE) -C $(KDIR) M=$$PWD
 
 defconfig:
 
 overlay: nlcamerapanel.dtbo
 	sudo cp nlcamerapanel.dtbo OVERLAY_DIR
+
+install: all
+	sudo rm /lib/modules/`uname -r`/kernel/drivers/gpu/drm/panel/nlcamerapanel.ko.xz
+	sudo cp nlcamerapanel.ko /lib/modules/`uname -r`/kernel/drivers/gpu/drm/panel/
+	sudo xz /lib/modules/`uname -r`/kernel/drivers/gpu/drm/panel/nlcamerapanel.ko
 
 all: default
 

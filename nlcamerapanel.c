@@ -434,8 +434,8 @@ static const struct drm_display_mode nlcamerapanel_default_mode = {
         .vsync_end      = 1280 + 40 + 8 + 2,
         .vtotal         = 1280 + 40 + 8 + 2 + 14,
 
-        .width_mm       = 135,
-        .height_mm      = 217,
+        .width_mm       = 62,
+        .height_mm      = 110,
 };
 
 static int nlcamerapanel_get_modes(struct drm_panel *panel,
@@ -487,6 +487,7 @@ static int nlcamerapanel_dsi_probe(struct mipi_dsi_device *dsi)
     ctx->desc = of_device_get_match_data(&dsi->dev);
 
     printk(KERN_ERR "nlcamerapanel drm_panel_init\n");
+    ctx->panel.prepare_upstream_first = true;
     drm_panel_init(&ctx->panel, &dsi->dev, &nlcamerapanel_funcs,
                    DRM_MODE_CONNECTOR_DSI);
 
